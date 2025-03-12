@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"> 
+    <title>company name Reports</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-logo-geophysics">
+                <img src="{% static 'images/Logo-Geophysics.png' %}" alt="Geophysics">
+            </div>
+            <div class="header-logo-oceanresearch">
+                <img src="{% static 'images/Logo-OceanResearch.jpg' %}" alt="Ocean Research">
+            </div>
+        </div>  
+        <div class="header-line">
+            <hr size="2" color="black" noshade>
+            <hr size="1" color="gray"  noshade style="margin-top: 1px;">
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="main-title">
+            <p>Wind and Wave Hindcast for Location: Akam</p>
+        </div>
+        <div class="main-content">
+            <div class="main-content-left">
+                <p><strong>Lat:</strong> 30<sup>◦</sup> 1.470’N, <strong>Lon:</strong> 49<sup>◦</sup> 55.680’E</p> 
+                <p><strong>Northing:</strong> 3321984 m N, <strong>Easting:</strong> 396630 m E, <strong>UTM Zone:</strong> 39 R</p>
+                <p>Forecast start date: 0030Z16-Jan-2025, Forecast end date: 0030Z23-Jan-2025, Forecast window: 7 days</p>
+            </div>
+            <div class="main-content-right">
+                <p><strong style="color:red">Wind Gust Warning:</strong> N/A</p>
+                <p style="color: blue;"><strong>Local Weather</strong></p>
+                <p>From Monday 00:30 IRDT to Monday 12:30 IRDT</p>
+                <p>Sunrise 05:46 IRDT, Sunset 19:45 IRDT</p>
+                <p>Visibility: 10 km</p>
+                <p>Max Wind Speed (WS10): 12 kts</p>
+                <p>Max Significant WaveHeight (Hs): 7 ft</p>
+                <p>Min/Max Temperature (T2): 19/25 °C</p>
+            </div>
+        </div>
+        <div class="main-content-table">
+            <table>
+                <thead>
+                    <!-- سطر اول هدر -->
+                    <tr>
+                    <th style="border-top: 2px solid black; border-bottom:2px solid black;border-right:1px solid black; background-color: #D5DEF0; " colspan="3">DATE</th>
+                    <th style="border-top: 2px solid black; border-bottom:2px solid black;border-right:1px solid black; background-color: #D5DEF0; " colspan="1">CONFI</th>
+                    <th style="border-top: 2px solid black; border-bottom:2px solid black;border-right:1px solid black; background-color: #D5DEF0;" colspan="6">WINDS</th>
+                    <th style="border-top: 2px solid black; border-bottom:2px solid black;border-right:1px solid black;background-color: #D5DEF0;" colspan="5">TOTAL SEA</th>
+                    <th style="border-top: 2px solid black; border-bottom:2px solid black;border-right:1px solid black;background-color: #D5DEF0;" colspan="3">SWELL</th>
+                    <th style="border-top: 2px solid black; border-bottom:2px solid black;background-color: #D5DEF0;" colspan="2">WEATHER</th>
+                </tr>
+                <!-- سطر دوم هدر -->
+                <tr class="sub-header">
+                    <th style="width: 5%;background-color: #E2E8F4;">Day</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">Date</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">Time</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">Confi</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">Wind</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">Wind</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">WS10m</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">WG10m</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">WS50m</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">WG50m</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">H<sub>s</sub></th>
+                    <th style="width: 5%;background-color: #E2E8F4;">H<sub>max</sub></th>
+                    <th style="width: 5%;background-color: #E2E8F4;">T<sub>p</sub></th>
+                    <th style="width: 5%;background-color: #E2E8F4;">T<sub>z</sub></th>
+                    <th style="width: 5%;background-color: #E2E8F4;">Wave</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">SWELL</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">SWELL</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">SWELL</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">Temp.</th>
+                    <th style="width: 5%;background-color: #E2E8F4;">Vis.</th>
+                </tr>
+    
+                <tr class="sub-header2">
+                    <th style="width: 5%;background-color: #EFF1F9;"></th>
+                    <th style="width: 5%;background-color: #EFF1F9;"></th>
+                    <th style="width: 5%;background-color: #EFF1F9;">clock</th>
+                    <th style="width: 5%;background-color: #EFF1F9;"></th>
+                    <th style="width: 5%;background-color: #EFF1F9;">Dir</th>
+                    <th style="width: 5%;background-color: #EFF1F9;">Dir</th>
+                    <th style="width: 5%;background-color: #EFF1F9;">Speed</th>
+                    <th style="width: 5%;background-color: #EFF1F9;">Gust</th>
+                    <th style="width: 5%;background-color: #EFF1F9;">Speed</th>
+                    <th style="width: 5%;background-color: #EFF1F9;">Gust</th>
+                    <th style="width: 5%;background-color: #EFF1F9;"></th>
+                    <th style="width: 5%;background-color: #EFF1F9;"></th>
+                    <th style="width: 5%;background-color: #EFF1F9;"></th>
+                    <th style="width: 5%;background-color: #EFF1F9;"></th>
+                    <th style="width: 5%;background-color: #EFF1F9;">Dir</th>
+                    <th style="width: 5%;background-color: #EFF1F9;">H</th>
+                    <th style="width: 5%;background-color: #EFF1F9;">T</th>
+                    <th style="width: 5%;background-color: #EFF1F9;">Dir</th>
+                    <th style="width: 5%;background-color: #EFF1F9;">2m</th>
+                    <th style="width: 5%;background-color: #EFF1F9;"></th>
+                </tr>
+    
+    
+                <tr class="sub-header3">
+                    <th style="width: 13.32%;border-bottom:2px solid black;background-color: #E2E8F4; "></th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;"></th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;">IRST</th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;"></th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;"></th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;">(deg)</th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;">(kt)</th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;">(kt)</th>
+                    <th style="width: 6.66%;border-bottom:2px solid black;background-color: #E2E8F4; ">(kt)</th>
+                    <th style="width: 6.66%;border-bottom:2px solid black;background-color: #E2E8F4; ">(kt)</th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;">(ft)</th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;">(ft)</th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;">(s)</th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;">(s)</th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;"></th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;">(ft)</th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;">(s)</th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;"></th>
+                    <th style="width: 6.66%;border-bottom:2px solid black;background-color: #E2E8F4; ">(°C)</th>
+                    <th style="width: 6.66%;border-bottom:2px solid black; background-color: #E2E8F4;">(km)</th>
+
+                </tr>
+            </thead>
+        </div>
+    </div>
+</body>
+</html>

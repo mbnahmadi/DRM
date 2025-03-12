@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;  
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px 1px 50px;
+    /* background-color: #f0f0f0; */
+}
+
+.header-logo-oceanresearch img{
+    width: 100px;
+    height: auto;
+    /* height: 100px; */
+}
+
+.header-logo-geophysics img{
+    width: 100px;
+    height: auto;
+    /* height: 100px; */
+}
+
+.header-line hr{
+    width: 95%;
+    margin: auto;
+}
+
+.main-container{
+    margin: 0px 70px 0px 70px;
+}
+
+.main-title{
+    margin-top: 50px;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.main-content{
+    display: flex;
+    margin: 10px;
+    font-size: 16px;
+}
+
+.main-content-left{
+    display: inline-block;
+    line-height:55px;
+    margin: 100px 200px 0 0;
+}
+
+.main-content-right{
+    display: inline-block;
+    line-height:22px;
+    margin: 100px 0 0 0;
+}
+
+.main-content-table table{
+    width: 100%;
+    border-collapse: collapse; 
+    text-align: center;
+}
+
+
+.sub-header th{
+    font-size: 12px;
+    color: black;
+    font-weight: 100;
+}
+
+.sub-header2 th{
+    font-size: 12px;
+    color: black;
+    font-weight: 100;
+}
+
+.sub-header3 th{
+    font-size: 12px;
+    color: black;
+    font-weight: 100;
+}
+
