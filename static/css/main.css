@@ -32,7 +32,7 @@ body{
     margin: auto;
 }
 
-.main-container{
+main{
     margin: 0px 70px 0px 70px;
 }
 
@@ -59,7 +59,9 @@ body{
     line-height:22px;
     margin: 100px 0 0 0;
 }
-
+.main-content-table{
+    margin-top: 20px;
+}
 .main-content-table table{
     width: 100%;
     border-collapse: collapse; 
@@ -68,20 +70,107 @@ body{
 
 
 .sub-header th{
-    font-size: 12px;
+    font-size: 14px;
     color: black;
     font-weight: 100;
 }
 
 .sub-header2 th{
-    font-size: 12px;
+    font-size: 14px;
     color: black;
     font-weight: 100;
 }
 
 .sub-header3 th{
-    font-size: 12px;
+    font-size: 14px;
     color: black;
     font-weight: 100;
 }
 
+.table-header {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    border-right: 1px solid black;
+    background-color: #D5DEF0;
+}
+
+.sub-header-cell {
+    /* width: 5%; */
+    background-color: #E2E8F4;
+    padding: 1px 0px;
+}
+
+.sub-header-cell-light {
+    /* width: 5%; */
+    background-color: #EFF1F9;
+    padding: 1px 0px;
+
+}
+
+.sub-header-cell-light {
+    /* width: 5%; */
+    background-color: #EFF1F9;
+    padding: 1px 0px;
+
+}
+
+.bottom-header-cell {
+    /* width: 6.66%; */
+    border-bottom: 3px solid black;
+    background-color: #E2E8F4;
+    padding: 1px 0px;
+
+}
+.main-content-table table tbody{
+    font-size: 14px;
+    color: black;
+}
+
+.main-content-table table tbody tr td{
+    padding: 3px 0px;
+}
+
+tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+tr:nth-child(odd) {
+    background-color: #EBEBEB;
+}
+
+.main-content-table-footer{
+    margin-top: 20px;
+}
+
+.main-content-table-footer p{
+    font-size: 13px;
+}
+
+.dot-green{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(0, 255, 0);
+    border-radius: 50%;
+    /* margin: 0 5px; */
+    vertical-align: middle;
+}
+
+.dot-yellow{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    /* margin: 0 5px; */
+    vertical-align: middle;
+    background-color: rgb(255, 255, 0);
+}
+
+.dot-red{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    /* margin: 0 5px; */
+    vertical-align: middle;
+    background-color: rgb(255, 0, 0);
+}

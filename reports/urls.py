@@ -19,4 +19,5 @@ from . import views
 
 urlpatterns = [
     path('', views.main_reports, name='main_reports'),
+    path('wind-data/', views.get_wind_data, name='wind_data'),
 ]
