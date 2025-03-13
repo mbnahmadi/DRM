@@ -62,65 +62,85 @@ main{
 .main-content-table{
     margin-top: 20px;
 }
-.main-content-table table{
+.main-content-table table {
     width: 100%;
     border-collapse: collapse; 
     text-align: center;
 }
 
-
-.sub-header th{
-    font-size: 14px;
-    color: black;
-    font-weight: 100;
+/* استایل برای کل thead */
+.main-content-table table thead {
+    position: sticky;
+    top: 0;
+    background-color: white; /* برای جلوگیری از transparent شدن */
 }
 
-.sub-header2 th{
-    font-size: 14px;
-    color: black;
-    font-weight: 100;
-}
-
-.sub-header3 th{
-    font-size: 14px;
-    color: black;
-    font-weight: 100;
-}
-
+/* استایل برای هدرهای اصلی */
 .table-header {
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
+    position: relative;
+    /* border-top: 2px solid black; */
+    /* border-bottom: 2px solid black; */
     border-right: 1px solid black;
-    background-color: #D5DEF0;
+    background-color: #D5DEF0 !important;
+    padding: 2px 0px;
+}
+
+/* استایل برای ردیف‌های هدر */
+.sub-header th,
+.sub-header2 th,
+.sub-header3 th {
+    font-size: 14px;
+    color: black;
+    font-weight: 100;
+    background-color: inherit;
 }
 
 .sub-header-cell {
-    /* width: 5%; */
-    background-color: #E2E8F4;
+    background-color: #E2E8F4 !important;
     padding: 1px 0px;
 }
 
 .sub-header-cell-light {
-    /* width: 5%; */
-    background-color: #EFF1F9;
+    background-color: #EFF1F9 !important;
     padding: 1px 0px;
-
-}
-
-.sub-header-cell-light {
-    /* width: 5%; */
-    background-color: #EFF1F9;
-    padding: 1px 0px;
-
 }
 
 .bottom-header-cell {
-    /* width: 6.66%; */
-    border-bottom: 3px solid black;
-    background-color: #E2E8F4;
+    border-bottom: 2px solid black;
+    background-color: #E2E8F4 !important;
     padding: 1px 0px;
-
 }
+.table-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    /* bottom: 0; */
+    height: 2px;
+    background-color: black;
+}
+.table-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: black;
+}
+
+/* اضافه کردن box-shadow برای حفظ border در حالت sticky */
+.main-content-table table thead::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: black;
+}
+
 .main-content-table table tbody{
     font-size: 14px;
     color: black;

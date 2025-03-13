@@ -133,71 +133,30 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Mon</td>
-                            <td>16-Jan</td>
-                            <td>0030</td>
-                            <td><span class="dot-green"></span></td>
-                            <td>SE</td>
-                            <td>138</td>
-                            <td>7</td>
-                            <td>10</td>
-                            <td>8</td>
-                            <td>12</td>
-                            <td>1.5</td>
-                            <td>2.6</td>
-                            <td>4</td>
-                            <td>4</td>
-                            <td>SSW</td>
-                            <td>1.3</td>
-                            <td>4</td>
-                            <td>SSW</td>
-                            <td>20</td>
-                            <td>10</td>
+                            {% for item in data.data %}
+                            <td>{{item.day}}</td>               
+                            <td>{{item.date}}</td>
+                            <td style="border-right: solid 1px black;">{{item.time}}</td>
+                            <td style="border-right: solid 1px black;"><span class="dot-green"></span></td>
+                            <td>{{item.windir}}</td>
+                            <td>{{item.winddir_deg}}</td>
+                            <td>{{item.ws10}}</td>
+                            <td>{{item.wg10}}</td>
+                            <td>{{item.ws50}}</td>
+                            <td style="border-right: solid 1px black;">{{item.wg50}}</td>
+                            <td>{{item.Hs}}</td>
+                            <td>{{item.Hmax}}</td>
+                            <td>{{item.Tp}}</td>
+                            <td>{{item.Tz}}</td>
+                            <td style="border-right: solid 1px black;">{{item.wavedir}}</td>
+                            <td>{{item.swellH}}</td>
+                            <td>{{item.swellT}}</td>
+                            <td style="border-right: solid 1px black;">{{item.swelldir}}</td>
+                            <td>{{item.temp}}</td>
+                            <td>{{item.vis}}</td>
                         </tr>
-                        <tr>
-                            <td>Mon</td>
-                            <td>16-Jan</td>
-                            <td>0030</td>
-                            <td><span class="dot-yellow"></span></td>
-                            <td>SE</td>
-                            <td>138</td>
-                            <td>7</td>
-                            <td>10</td>
-                            <td>8</td>
-                            <td>12</td>
-                            <td>1.5</td>
-                            <td>2.6</td>
-                            <td>4</td>
-                            <td>4</td>
-                            <td>SSW</td>
-                            <td>1.3</td>
-                            <td>4</td>
-                            <td>SSW</td>
-                            <td>20</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>Mon</td>
-                            <td>16-Jan</td>
-                            <td>0030</td>
-                            <td><span class="dot-red"></span></td>
-                            <td>SE</td>
-                            <td>138</td>
-                            <td>7</td>
-                            <td>10</td>
-                            <td>8</td>
-                            <td>12</td>
-                            <td>1.5</td>
-                            <td>2.6</td>
-                            <td>4</td>
-                            <td>4</td>
-                            <td>SSW</td>
-                            <td>1.3</td>
-                            <td>4</td>
-                            <td>SSW</td>
-                            <td>20</td>
-                            <td>10</td>
-                        </tr>
+                        {% endfor %}
+                        
                     </tbody>
                 </table>
             </div>
