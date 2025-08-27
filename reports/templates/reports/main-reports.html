@@ -1,189 +1,264 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}"> 
-    <title>company name Reports</title>
-</head>
-<body>
-    <header>
-        <div class="header-container">
-            <div class="header-logo-geophysics">
-                <img src="{% static 'images/Logo-Geophysics.png' %}" loading="lazy" alt="Geophysics">
-            </div>
-            <div class="header-logo-oceanresearch">
-                <img src="{% static 'images/Logo-OceanResearch.jpg' %}" loading="lazy" alt="Ocean Research">
-            </div>
-        </div>  
-        <div class="header-line">
-            <hr size="2" color="black" noshade>
-            <hr size="1" color="gray"  noshade style="margin-top: 1px;">
-        </div>
-    </header>
-    <main>
-        <article>
-            <div class="main-container">
-                <div class="main-title">
-                    <p>Wind and Wave Hindcast for Location: Akam</p>
-            </div>
-            <div class="main-content">
-                <div class="main-content-left">
-                    <p><strong>Lat:</strong> 30<sup>◦</sup> 1.470’N, <strong>Lon:</strong> 49<sup>◦</sup> 55.680’E</p> 
-                    <p><strong>Northing:</strong> 3321984 m N, <strong>Easting:</strong> 396630 m E, <strong>UTM Zone:</strong> 39 R</p>
-                    <p>Forecast start date: 0030Z16-Jan-2025, Forecast end date: 0030Z23-Jan-2025, Forecast window: 7 days</p>
+    {% load static %}
+    {% load custom_filters %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        {% comment %} <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% endcomment %}
+        {% comment %} <meta name="viewport" content="width=1024"> {% endcomment %}
+        {% comment %} <meta name="viewport" content="initial-scale=0.1, minimum-scale=0.1, maximum-scale=5.0, user-scalable=yes, width=1920"> {% endcomment %}
+        <meta name="viewport" content="width=1024, user-scalable=yes">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}"> 
+        <link rel="manifest" href="{% static 'manifest.json' %}"> 
+        <meta name="theme-color" content="#000000">
+        <link rel="apple-touch-icon" href="{% static 'images/Logo-oceanresearch.png' %}">
+        <title>company name Reports</title>
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <div class="header-logo-geophysics">
+                    <img src="{% static 'images/Logo-Geophysics.png' %}" loading="lazy" alt="Geophysics">
                 </div>
-                <div class="main-content-right">
-                    <p><strong style="color:red">Wind Gust Warning:</strong> N/A</p>
-                    <p style="color: blue;"><strong>Local Weather</strong></p>
-                    <p>From Monday 00:30 IRDT to Monday 12:30 IRDT</p>
-                    <p>Sunrise 05:46 IRDT, Sunset 19:45 IRDT</p>
-                    <p>Visibility: 10 km</p>
-                    <p>Max Wind Speed (WS10): 12 kts</p>
-                    <p>Max Significant WaveHeight (Hs): 7 ft</p>
-                    <p>Min/Max Temperature (T2): 19/25 °C</p>
+                <div class="header-logo-oceanresearch">
+                    <img src="{% static 'images/Logo-OceanResearch.png' %}" loading="lazy" alt="Ocean Research">
                 </div>
+            </div>  
+            <div class="header-line">
+                <hr size="2" color="black" noshade>
+                <hr size="1" color="gray"  noshade style="margin-top: 1px;">
             </div>
-        </article>
-        <article>
-            <div class="main-content-table">
-                <table>
-                    <thead>
-                        <!-- سطر اول هدر -->
-                        <tr>
-                        <th class="table-header" colspan="3">DATE</th>
-                        <th class="table-header" colspan="1">CONFI</th>
-                        <th class="table-header" colspan="6">WINDS</th>
-                        <th class="table-header" colspan="5">TOTAL SEA</th>
-                        <th class="table-header" colspan="3">SWELL</th>
-                        <th class="table-header" style="border-right: none;" colspan="2">WEATHER</th>
-                    </tr>
-                    <!-- سطر دوم هدر -->
-                    <tr class="sub-header">
-                        <th class="sub-header-cell">Day</th>
-                        <th class="sub-header-cell">Date</th>
-                        <th class="sub-header-cell" style="border-right: solid 1px black;">Time</th>
-                        <th class="sub-header-cell" style="width: 5%;border-right: solid 1px black;">Confi</th>
-                        <th class="sub-header-cell">Wind</th>
-                        <th class="sub-header-cell">Wind</th>
-                        <th class="sub-header-cell">WS10m</th>
-                        <th class="sub-header-cell">WG10m</th>
-                        <th class="sub-header-cell">WS50m</th>
-                        <th class="sub-header-cell" style="border-right: solid 1px black;">WG50m</th>
-                        <th class="sub-header-cell">H<sub>s</sub></th>
-                        <th class="sub-header-cell">H<sub>max</sub></th>
-                        <th class="sub-header-cell">T<sub>p</sub></th>
-                        <th class="sub-header-cell">T<sub>z</sub></th>
-                        <th class="sub-header-cell" style="border-right: solid 1px black;">Wave</th>
-                        <th class="sub-header-cell">Swell</th>
-                        <th class="sub-header-cell">Swell</th>
-                        <th class="sub-header-cell"style="border-right: solid 1px black;">Swell</th>
-                        <th class="sub-header-cell">Temp.</th>
-                        <th class="sub-header-cell">Vis.</th>
-                    </tr>
-        
-                    <tr class="sub-header2">
-                        <th class="sub-header-cell-light"></th>
-                        <th class="sub-header-cell-light"></th>
-                        <th class="sub-header-cell-light" style="border-right: solid 1px black;">clock</th>
-                        <th class="sub-header-cell-light" style="border-right: solid 1px black;"></th>
-                        <th class="sub-header-cell-light">Dir</th>
-                        <th class="sub-header-cell-light">Dir</th>
-                        <th class="sub-header-cell-light">Speed</th>
-                        <th class="sub-header-cell-light">Gust</th>
-                        <th class="sub-header-cell-light">Speed</th>
-                        <th class="sub-header-cell-light"style="border-right: solid 1px black;">Gust</th>
-                        <th class="sub-header-cell-light"></th>
-                        <th class="sub-header-cell-light"></th>
-                        <th class="sub-header-cell-light"></th>
-                        <th class="sub-header-cell-light"></th>
-                        <th class="sub-header-cell-light"style="border-right: solid 1px black;">Dir</th>
-                        <th class="sub-header-cell-light">H</th>
-                        <th class="sub-header-cell-light">T</th>
-                        <th class="sub-header-cell-light"style="border-right: solid 1px black;">Dir</th>
-                        <th class="sub-header-cell-light">2m</th>
-                        <th class="sub-header-cell-light"></th>
-                    </tr>
-        
-        
-                    <tr class="sub-header3">
-                        <th class="bottom-header-cell"></th>
-                        <th class="bottom-header-cell"></th>
-                        <th class="bottom-header-cell" style="border-right: solid 1px black;">IRST</th>
-                        <th class="bottom-header-cell" style="border-right: solid 1px black;"></th>
-                        <th class="bottom-header-cell"></th>
-                        <th class="bottom-header-cell">(deg)</th>
-                        <th class="bottom-header-cell">(kt)</th>
-                        <th class="bottom-header-cell">(kt)</th>
-                        <th class="bottom-header-cell">(kt)</th>
-                        <th class="bottom-header-cell"style="border-right: solid 1px black;">(kt)</th>
-                        <th class="bottom-header-cell">(ft)</th>
-                        <th class="bottom-header-cell">(ft)</th>
-                        <th class="bottom-header-cell">(s)</th>
-                        <th class="bottom-header-cell">(s)</th>
-                        <th class="bottom-header-cell"style="border-right: solid 1px black;"></th>
-                        <th class="bottom-header-cell">(ft)</th>
-                        <th class="bottom-header-cell">(s)</th>
-                        <th class="bottom-header-cell"style="border-right: solid 1px black;"></th>
-                        <th class="bottom-header-cell">(°C)</th>
-                        <th class="bottom-header-cell">(km)</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            {% for item in data.data %}
-                            <td>{{item.day}}</td>               
-                            <td>{{item.date}}</td>
-                            <td style="border-right: solid 1px black;">{{item.time}}</td>
-                            <td style="border-right: solid 1px black;"><span class="dot-green"></span></td>
-                            <td>{{item.windir}}</td>
-                            <td>{{item.winddir_deg}}</td>
-                            <td>{{item.ws10}}</td>
-                            <td>{{item.wg10}}</td>
-                            <td>{{item.ws50}}</td>
-                            <td style="border-right: solid 1px black;">{{item.wg50}}</td>
-                            <td>{{item.Hs}}</td>
-                            <td>{{item.Hmax}}</td>
-                            <td>{{item.Tp}}</td>
-                            <td>{{item.Tz}}</td>
-                            <td style="border-right: solid 1px black;">{{item.wavedir}}</td>
-                            <td>{{item.swellH}}</td>
-                            <td>{{item.swellT}}</td>
-                            <td style="border-right: solid 1px black;">{{item.swelldir}}</td>
-                            <td>{{item.temp}}</td>
-                            <td>{{item.vis}}</td>
+        </header>
+        <main>
+            <article>
+                <div class="main-container">
+                    <div class="main-title">
+                        <p>Wind and Wave Forecast for Location: Akam</p>
+                </div>
+                <div class="main-content">
+                    <div class="main-content-left">
+                        <p><strong>Lat:</strong> 30<sup>◦</sup> 1.470’N, <strong>Lon:</strong> 49<sup>◦</sup> 55.680’E</p> 
+                        <p><strong>Northing:</strong> 3321984 m N, <strong>Easting:</strong> 396630 m E, <strong>UTM Zone:</strong> 39 R</p>
+                        <p>Forecast start date: {{first_date}}, Forecast end date: {{last_date}}, Forecast window: 7 days</p>
+                    </div>
+                    <div class="main-content-right">
+                        <p><strong style="color:red">Wind Gust Warning:</strong> N/A</p>
+                        <p style="color: blue;"><strong>Local Weather</strong></p>
+                        <p>From Monday 00:30 IRDT to Monday 12:30 IRDT</p>
+                        <p>Sunrise 05:46 IRDT, Sunset 19:45 IRDT</p>
+                        <p>Visibility: 10 km</p>
+                        <p>Max Wind Speed (WS10): {{max_ws10}} kts</p>
+                        <p>Max Significant WaveHeight (Hs): {{max_hs}} ft</p>
+                        <p>Min/Max Temperature (T2): {{min_temp}}/{{max_temp}} °C</p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="main-content-table table-container">
+                    <table>
+                        <thead>
+                            <!-- سطر اول هدر -->
+                            <tr>
+                            <th class="table-header" colspan="3">DATE</th>
+                            <th class="table-header" colspan="1">CONFI</th>
+                            <th class="table-header" colspan="6">WINDS</th>
+                            <th class="table-header" colspan="5">TOTAL SEA</th>
+                            <th class="table-header" colspan="3">SWELL</th>
+                            <th class="table-header" style="border-right: none;" colspan="2">WEATHER</th>
                         </tr>
-                        {% endfor %}
-                        
-                    </tbody>
-                </table>
-            </div>
-            <div class="main-content-table-footer">
-                <hr width="100%" size="1" color="black"  noshade>
-                <p>
-                    <strong>Confi:</strong> Confidence, <strong>Dir:</strong> Direction, <strong>WS:</strong> Wind Speed, <strong>WG:</strong> Wind Gust, <strong>10m:</strong> 10 m above surface, <strong>50m:</strong> 50 m above surface, <strong>H<sub>s</sub>:</strong> Significant Wave Height, <strong>H<sub>max</sub>:</strong> Maximum Wave
-                    Height, <strong>T<sub>p</sub>:</strong> Peak Wave Period, <strong>T<sub>z</sub>:</strong> Mean Wave Period,<strong>Temp:</strong> Temperature at 2 m above surface, <strong>Vis:</strong> Visibility
-                </p>
-            </div>
-        </article>
-        <article>
-            <canvas id="windChart" width="700" height="500"></canvas>
-        </article>
-        <article>
+                        <!-- سطر دوم هدر -->
+                        <tr class="sub-header">
+                            <th class="sub-header-cell">Day</th>
+                            <th class="sub-header-cell">Date</th>
+                            <th class="sub-header-cell" style="border-right: solid 1px black;">Time</th>
+                            <th class="sub-header-cell" style="width: 5%;border-right: solid 1px black;">Confi</th>
+                            <th class="sub-header-cell">Wind</th>
+                            <th class="sub-header-cell">Wind</th>
+                            <th class="sub-header-cell">WS10m</th>
+                            <th class="sub-header-cell">WG10m</th>
+                            <th class="sub-header-cell">WS50m</th>
+                            <th class="sub-header-cell" style="border-right: solid 1px black;">WG50m</th>
+                            <th class="sub-header-cell">H<sub>s</sub></th>
+                            <th class="sub-header-cell">H<sub>max</sub></th>
+                            <th class="sub-header-cell">T<sub>p</sub></th>
+                            <th class="sub-header-cell">T<sub>z</sub></th>
+                            <th class="sub-header-cell" style="border-right: solid 1px black;">Wave</th>
+                            <th class="sub-header-cell">Swell</th>
+                            <th class="sub-header-cell">Swell</th>
+                            <th class="sub-header-cell"style="border-right: solid 1px black;">Swell</th>
+                            <th class="sub-header-cell">Temp.</th>
+                            <th class="sub-header-cell">Vis.</th>
+                        </tr>
+            
+                        <tr class="sub-header2">
+                            <th class="sub-header-cell-light"></th>
+                            <th class="sub-header-cell-light"></th>
+                            <th class="sub-header-cell-light" style="border-right: solid 1px black;"><img src="{% static "svg/clock.svg" %}" class='clock-svg'></th>
+                            <th class="sub-header-cell-light" style="border-right: solid 1px black;"></th>
+                            <th class="sub-header-cell-light">Dir</th>
+                            <th class="sub-header-cell-light">Dir</th>
+                            <th class="sub-header-cell-light">Speed</th>
+                            <th class="sub-header-cell-light">Gust</th>
+                            <th class="sub-header-cell-light">Speed</th>
+                            <th class="sub-header-cell-light"style="border-right: solid 1px black;">Gust</th>
+                            <th class="sub-header-cell-light"></th>
+                            <th class="sub-header-cell-light"></th>
+                            <th class="sub-header-cell-light"></th>
+                            <th class="sub-header-cell-light"></th>
+                            <th class="sub-header-cell-light"style="border-right: solid 1px black;">Dir</th>
+                            <th class="sub-header-cell-light">H</th>
+                            <th class="sub-header-cell-light">T</th>
+                            <th class="sub-header-cell-light"style="border-right: solid 1px black;">Dir</th>
+                            <th class="sub-header-cell-light">2m</th>
+                            <th class="sub-header-cell-light"></th>
+                        </tr>
+            
+            
+                        <tr class="sub-header3">
+                            <th class="bottom-header-cell"></th>
+                            <th class="bottom-header-cell"></th>
+                            <th class="bottom-header-cell" style="border-right: solid 1px black;">IRST</th>
+                            <th class="bottom-header-cell" style="border-right: solid 1px black;"></th>
+                            <th class="bottom-header-cell"></th>
+                            <th class="bottom-header-cell">(deg)</th>
+                            <th class="bottom-header-cell">(kt)</th>
+                            <th class="bottom-header-cell">(kt)</th>
+                            <th class="bottom-header-cell">(kt)</th>
+                            <th class="bottom-header-cell"style="border-right: solid 1px black;">(kt)</th>
+                            <th class="bottom-header-cell">(ft)</th>
+                            <th class="bottom-header-cell">(ft)</th>
+                            <th class="bottom-header-cell">(s)</th>
+                            <th class="bottom-header-cell">(s)</th>
+                            <th class="bottom-header-cell"style="border-right: solid 1px black;"></th>
+                            <th class="bottom-header-cell">(ft)</th>
+                            <th class="bottom-header-cell">(s)</th>
+                            <th class="bottom-header-cell"style="border-right: solid 1px black;"></th>
+                            <th class="bottom-header-cell">(°C)</th>
+                            <th class="bottom-header-cell">(km)</th>
 
-        </article>
-        <article>
-            <div>
-                <img src="/media/dynamic/MET8_RGB.webp" style="width: 50%; height: 50%;" loading="lazy" alt="MET8_RGB">  
-                <img src="/media/dynamic/IMG001.webp" style="width: 50%; height: 50%;" loading="lazy" alt="IMG001">
-            </div>
-        </article>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in data %}
+                            <tr>
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.day}}</td>               
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.date}}</td>
+                                <td style="border-right: solid 1px black; {% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.time}}</td>
+                                <td style="border-right: solid 1px black; {% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}"><span class="{% if item.confi == 'green' %}dot-green{% elif item.confi == 'yellow' %}dot-yellow{% else %}dot-red{% endif %}"></span></td>
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.windir}}</td>
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.winddir_deg}}</td>
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.ws10}}</td>
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.wg10}}</td>
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.ws50}}</td>
+                                <td style="border-right: solid 1px black; {% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.wg50}}</td>
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.Hs}}</td>
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.Hmax}}</td>
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.Tp}}</td>
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.Tz}}</td>
+                                <td style="border-right: solid 1px black; {% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.wavedir}}</td>
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.swellH}}</td>
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.swellT}}</td>
+                                <td style="border-right: solid 1px black; {% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.swelldir}}</td>
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.temp}}</td>
+                                <td style="{% if item.is_last_hour_of_day %}border-bottom: solid 2px black;{% endif %}">{{item.vis}}</td>
+                            </tr>
+                            {% endfor %}
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div class="main-content-table-footer">
+                    <hr width="100%" size="1" color="black"  noshade>
+                    <p>
+                        <strong>Confi:</strong> Confidence, <strong>Dir:</strong> Direction, <strong>WS:</strong> Wind Speed, <strong>WG:</strong> Wind Gust, <strong>10m:</strong> 10 m above surface, <strong>50m:</strong> 50 m above surface, <strong>H<sub>s</sub>:</strong> Significant Wave Height, <strong>H<sub>max</sub>:</strong> Maximum Wave
+                        Height, <strong>T<sub>p</sub>:</strong> Peak Wave Period, <strong>T<sub>z</sub>:</strong> Mean Wave Period,<strong>Temp:</strong> Temperature at 2 m above surface, <strong>Vis:</strong> Visibility
+                    </p>
+                </div>
+            </article>
+            <article style="margin-top:150px;">
+                <canvas id="windChart" width="700" height="300"></canvas>
+            </article>
+            <article>
+                <canvas id="waveChart" width="700" height="300"></canvas>
+            </article>
+            <article>
+                <div class="satellite-pic">
+                    <img src="/media/dynamic/IMG001.webp" style="width: 50%; height: 50%;" loading="lazy" alt="IMG001">
+                    <img src="/media/dynamic/MET8_RGB.webp" style="width: 45%; height: 45%;" loading="lazy" alt="MET8_RGB">  
+                </div>
+            </article>
+        </div>
+            {% comment %} <button onclick="printContent()">print</button> {% endcomment %}
+        </main>
+        <script>
+            // استخراج داده‌های date از لیست data.data
+            const time = [
+                {% for item in data %}
+                    "{{ item.time|get_hour }}"{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            ];
+            // سایر داده‌ها (مثلاً wind speed) را می‌توانید به همین شکل استخراج کنید
+            const date = [
+                {% for item in data %}
+                    "{{ item.date|get_year }}"{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            ];
+            const ws10 = [
+                {% for item in data %}
+                    "{{ item.ws10 }}"{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            ];
+            const wg10 = [
+                {% for item in data %}
+                    "{{ item.wg10 }}"{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            ];
+            const ws50 = [
+                {% for item in data %}
+                    "{{ item.ws50 }}"{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            ];
+            const wg50 = [
+                {% for item in data %}
+                    "{{ item.wg50 }}"{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            ];
+            const windDataDire = [
+                {% for item in data %}
+                    "{{ item.windir}}"{% if not forloop.last %},{% endif %}
+                {% endfor %}]
 
-    </main>
-    <script src="{% static 'js/chart.js' %}"></script>
-    <script src="{% static 'chartjs/main.js' %}"></script>
-
-</body>
-</html>
+            const Hs = [
+                {% for item in data %}
+                    "{{ item.Hs}}"{% if not forloop.last %},{% endif %}
+                {% endfor %}]    
+            const Hmax = [
+                {% for item in data %}
+                    "{{ item.Hs}}"{% if not forloop.last %},{% endif %}
+                {% endfor %}]  
+            const swellH = [
+                {% for item in data %}
+                    "{{ item.Hs}}"{% if not forloop.last %},{% endif %}
+                {% endfor %}]
+            const waveDataDire = [
+                {% for item in data %}
+                    "{{ item.wavedir}}"{% if not forloop.last %},{% endif %}
+                {% endfor %}]     
+            console.log(waveDataDire)
+        </script>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>      
+        <script src="{% static 'chartjs/chart.js' %}"></script>
+        <script src="{% static 'chartjs/windchart.js' %}"></script>
+        <script src="{% static 'chartjs/wavechart.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+        <script>
+            if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/static/sw.js')
+                .then(reg => console.log('Service Worker ثبت شد'))
+                .catch(err => console.log('خطا در ثبت Service Worker:', err));
+            });
+            }
+        </script>
+    </body>
+    </html>

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ybys1q$6oc6zvq1to4zg943ibcrtg-7%575&@)qznkr@!$d67z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # add apps
     'reports.apps.ReportsConfig',
+    'sendemail.apps.SendemailConfig',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,16 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+import logging
+# Email Configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'pmetoceans@gmail.com'  # اصلاح شده
+EMAIL_HOST_PASSWORD = 'eykc jxys adkg ffyy'
+DEFAULT_FROM_EMAIL = 'pmetoceans@gmail.com'
+logging.basicConfig(level=logging.DEBUG)

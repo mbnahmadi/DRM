@@ -3,15 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-html, body {
+body{
     font-family: sans-serif;  
-    /* min-width: 1024px;
-    width: 1024px; */
-    margin: 0 auto;
-    /* overflow-x: auto; */
-    -webkit-text-size-adjust: none;
 }
+/* article{
+    margin-bottom: 50px;
+} */
 
 .header-container{
     display: flex;
@@ -44,7 +41,7 @@ main{
 
 .main-title{
     margin-top: 50px;
-    font-size: 2rem; /* یا 5vw برای تنظیم بر اساس عرض صفحه */
+    font-size: 29px;
     font-weight: 700;
 }
 
@@ -57,7 +54,7 @@ main{
 .main-content-left{
     display: inline-block;
     line-height:55px;
-    margin: 100px 100px 0 0;
+    margin: 100px 200px 0 0;
 }
 
 .main-content-right{
@@ -116,9 +113,6 @@ main{
     background-color: #E2E8F4 !important;
     padding: 1px 0px;
 }
-/*  */
-
-/*  */
 .table-header::before {
     content: '';
     position: absolute;
@@ -216,72 +210,3 @@ tr:nth-child(odd) {
     height: auto;
     margin: 0 10px;
 }
-
-
-.clock-svg{
-    width: 16px;
-    height: auto;
-}
-
-
-/* تنظیمات برای موبایل (عرض کمتر از 768px) */
-/* @media screen and (max-width: 320px) {
-    .main-title {
-        font-size: 10px; 
-    }
-
-    .main-content-left,
-    .main-content-right {
-        font-size: 14px; 
-        margin: 50px 20px 0 0;
-        line-height: 30px; 
-    }
-
-    .main-content {
-        flex-direction: column; 
-        margin: 5px;
-    }
-
-    .main-content-left,
-    .main-content-right {
-        margin: 20px 0; 
-    }
-} */
-
-
-/* @media media and (min-width: 1024px) {
-
-    html, body {
-        min-width: 1024px; 
-        width: 1024px;    
-        overflow-x: auto;
-    }
-    .main-title {
-        font-size: 18px !important;
-    }
-    .main-content-left,
-    .main-content-right {
-        font-size: 13px !important;
-        margin: 100px 30px 0 0 !important;
-        line-height: 35px !important;
-    }
-    .main-content-table-footer p {
-        font-size: 10px !important;
-    }
-} */
-
-
-
-@media print {
-    body {
-      display: none !important;
-    }
-    canvas {
-      display: block !important;
-      width: 100%;
-      height: auto;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }

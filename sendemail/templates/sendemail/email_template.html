@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<body>
+    <a href="{{ url }}" style="display: inline-block;">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/PDF_icon.svg/768px-PDF_icon.svg.png" style="width: 32px; height: 32px; vertical-align: middle;">
+        <p>sakoo.pdf</p>
+    </a>
+    {% comment %} <a href="{{ url }}" style="display: inline-block;">
+        <img src="{% static 'images/pdf.png' %}" alt="PDF Icon" style="width: 32px; height: 32px;">
+        <p>eilam.pdf</p>
+    </a> {% endcomment %}
+    {% comment %} <a href="{{ url }}" style="display: inline-block;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/PDF_icon.svg/768px-PDF_icon.svg.png" alt="PDF Icon" style="width: 32px; height: 32px;">
+        <p>spd11.pdf</p>
+    </a> {% endcomment %}
+    {% comment %} <p>سلام، گزارش شما آماده است:</p> {% endcomment %}
+    {% comment %} <a href="{{ url }}" style="display: inline-block; text-decoration: none; color: #000;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/PDF_icon.svg/768px-PDF_icon.svg.png" style="width: 32px; height: 32px; vertical-align: middle;">
+        <div style="vertical-align: middle; font-weight: bold;">{{ filename }}</div>
+    </a> {% endcomment %}
+    {% comment %} <p>برای مشاهده گزارش لطفا روی آیکون یا نام فایل کلیک کنید.</p> {% endcomment %}
+</body>
+</html>
