@@ -21,7 +21,7 @@ The **base functionality** is completed, but the project is still **under develo
 ## Preview
 Below is a preview of the table and charts rendered by the system:
 
-![Table Preview](#)  
-![Charts Preview](#)  
+![Table Preview](docs/images/table_preview.png)  
+![Charts Preview](docs/images/charts_preview.png)  
 
 *(These previews are examples for demonstration and may not represent final design.)*
